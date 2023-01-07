@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+        }
+        .box{
+            border-radius: 10px;
+            background-color: bisque;
+        }
+        #box-3{
+            grid-column: 1;
+            grid-row: span 2;
+        }
+        #box-2{
+            grid-column: 2;
+            grid-row: span 3;
+        }
+        @media screen and (max-width: 576px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            #box-2{
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box-1">
+            <h2>Box-1</h2>
+        </div>
+        <div class="box" id="box-2">
+            <h2>Box-2</h2>
+        </div>
+        <div class="box" id="box-3">
+            <h2>Box-3</h2>
+        </div>
+    </div>
+</body>
+</html>
